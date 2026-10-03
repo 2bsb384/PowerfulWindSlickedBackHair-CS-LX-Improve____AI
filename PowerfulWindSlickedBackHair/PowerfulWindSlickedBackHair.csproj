@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA333225-0471-4F38-B371-E50517B9AAF0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PowerfulWindSlickedBackHair</RootNamespace>
+    <AssemblyName>PowerfulWindSlickedBackHair</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>PowerfulWindSlickedBackHair.Program</StartupObject>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>.\NAudio.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SoundTouch\SoundPlayer.cs" />
+    <Compile Include="SoundTouch\SoundTouch.cs" />
+    <Compile Include="SoundTouch\SoundTouchInterop32.cs" />
+    <Compile Include="SoundTouch\SoundTouchInterop64.cs" />
+    <Compile Include="SoundTouch\SoundTouchProfile.cs" />
+    <Compile Include="SoundTouch\SoundTouchSettings.cs" />
+    <Compile Include="SoundTouch\VarispeedSampleProvider.cs" />
+    <Compile Include="Tools\AnimalsShower.cs" />
+    <Compile Include="Tools\AssetHelper.cs" />
+    <Compile Include="Tools\BWYukiShower.cs" />
+    <Compile Include="Tools\ClapYukiShower.cs" />
+    <Compile Include="Tools\CmdHelper.cs" />
+    <Compile Include="Tools\Logger.cs" />
+    <Compile Include="Tools\Mathf.cs" />
+    <Compile Include="Tools\Win32APIHelper.cs" />
+    <Compile Include="Tools\PerlinNoise.cs" />
+    <Compile Include="Tools\RollingDogShower.cs" />
+    <Compile Include="Tools\SystemLockHelper.cs" />
+    <Compile Include="Tools\WaveBirdShower.cs" />
+    <Compile Include="Tools\YukiState.cs" />
+    <Compile Include="Tracker.cs" />
+    <Compile Include="Windows\AhhhF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\AhhhF.Designer.cs">
+      <DependentUpon>AhhhF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BackgroundForm.Designer.cs">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BirdWaveF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BirdWaveF.Designer.cs">
+      <DependentUpon>BirdWaveF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BlackBirdF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BlackBirdF.Designer.cs">
+      <DependentUpon>BlackBirdF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BlueScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BlueScreen.Designer.cs">
+      <DependentUpon>BlueScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BWYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\BWYukiForm.Designer.cs">
+      <DependentUpon>BWYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CabbageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\CabbageForm.Designer.cs">
+      <DependentUpon>CabbageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DogWalkF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\DogWalkF.Designer.cs">
+      <DependentUpon>DogWalkF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ErrorF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ErrorF.Designer.cs">
+      <DependentUpon>ErrorF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FightForm.Designer.cs">
+      <DependentUpon>FightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FloatWindowHelperF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FloatWindowHelperF.Designer.cs">
+      <DependentUpon>FloatWindowHelperF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FloatYukiWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\FloatYukiWindow.Designer.cs">
+      <DependentUpon>FloatYukiWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HugeBlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\HugeBlow.Designer.cs">
+      <DependentUpon>HugeBlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\JumpingYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\JumpingYukiForm.Designer.cs">
+      <DependentUpon>JumpingYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LikeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\LikeForm.Designer.cs">
+      <DependentUpon>LikeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PigeonPeekF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\PigeonPeekF.Designer.cs">
+      <DependentUpon>PigeonPeekF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RollingDogF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\RollingDogF.Designer.cs">
+      <DependentUpon>RollingDogF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StaticPigeonF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\StaticPigeonF.Designer.cs">
+      <DependentUpon>StaticPigeonF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StaticYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\StaticYukiForm.Designer.cs">
+      <DependentUpon>StaticYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TrackedDialogHelper.cs" />
+    <Compile Include="Windows\WalkingYukiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WalkingYukiForm.Designer.cs">
+      <DependentUpon>WalkingYukiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WhiteBirdF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\WhiteBirdF.Designer.cs">
+      <DependentUpon>WhiteBirdF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\YukiClapF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\YukiClapF.Designer.cs">
+      <DependentUpon>YukiClapF.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- 所有 .resx 由 ConvertResx.ps1 预编译为经典格式 .resources（obj\ResGen\），
+         文件名即逻辑资源名。避免 dotnet msbuild 的 GenerateResource 拒绝非字符串 resx。 -->
+    <EmbeddedResource Include="obj\ResGen\*.resources">
+      <LogicalName>%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Offset.txt" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- 全部素材作为嵌入资源打进 exe（单文件发布） -->
+    <EmbeddedResource Include="Assets\**\*" />
+    <!-- 依赖动态库同样嵌入，运行时由程序自释放（见 Program.Main / AssetHelper） -->
+    <EmbeddedResource Include="SoundTouch.dll" />
+    <EmbeddedResource Include="SoundTouch_x64.dll" />
+    <EmbeddedResource Include="NAudio.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

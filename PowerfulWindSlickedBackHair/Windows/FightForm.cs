@@ -1,0 +1,57 @@
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace PowerfulWindSlickedBackHair.Windows
+{
+	// Token: 0x0200000F RID: 15
+	public partial class FightForm : Form
+	{
+        private Bitmap fight1;
+
+        private Bitmap fight2;
+
+        private Bitmap fight3;
+
+        public new Image BackgroundImage
+        {
+            get
+            {
+                return base.BackgroundImage;
+            }
+            set
+            {
+                base.BackgroundImage = value;
+                if (base.IsHandleCreated)
+                {
+                    Invoke((MethodInvoker)delegate
+                    {
+                        base.BackgroundImage = value;
+                    });
+                }
+            }
+        }
+
+        public FightForm()
+        {
+            InitializeComponent();
+            fight1 = PowerfulWindSlickedBackHair.Tools.AssetHelper.GetAssetBitmap("Fight1.png");
+            fight2 = PowerfulWindSlickedBackHair.Tools.AssetHelper.GetAssetBitmap("Fight2.png");
+            fight3 = PowerfulWindSlickedBackHair.Tools.AssetHelper.GetAssetBitmap("Fight3.png");
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, value: true);
+            UpdateStyles();
+        }
+
+        public void ShowDialog(long endF)
+        {
+            TrackedDialogHelper.Show(this, 8, delegate(long frame)
+            {
+                long num2 = frame % 6;
+                base.BackgroundImage = ((num2 < 2) ? fight1 : ((num2 < 4) ? fight2 : fight3));
+                return frame <= endF;
+            });
+        }
+    }
+}
